@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 import secrets
 from functools import wraps
-import MySQLdb
-
 import jwt
 from flask import Flask, jsonify, request, make_response, render_template
 import datetime
