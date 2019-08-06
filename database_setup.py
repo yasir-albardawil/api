@@ -27,6 +27,7 @@ class Data(Base):
     first_name = Column(String(250))
     last_name = Column(String(250))
     github_link = Column(String(250))
+
     @property
     def serialize(self):
         # return data in serializable format
@@ -38,5 +39,5 @@ class Data(Base):
         }
 
 
-engine = create_engine('sqlite:///data.db')
+engine = create_engine('mysql+pymysql://b5060ef24e7038:1902c0af@eu-cdbr-west-02.cleardb.net/heroku_ad06423d03e4f02')
 Base.metadata.create_all(engine)
