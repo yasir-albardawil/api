@@ -40,6 +40,6 @@ xhr.onload = function () {
 };
 
 // Secured api
-xhr.open('GET', 'http://127.0.0.1:5000/data.json?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoieWFzaXIifQ.SlMcGE7m4Xy-IkrYbHXa3J3hpuQrEQz_sb0lBrLRJIE');
+// xhr.open('GET', 'http://127.0.0.1:5000/data.json?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoieWFzaXIifQ.SlMcGE7m4Xy-IkrYbHXa3J3hpuQrEQz_sb0lBrLRJIE');
 xhr.open('GET', 'https://yasir-api.herokuapp.com/data.json?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoieWFzaXIifQ.SlMcGE7m4Xy-IkrYbHXa3J3hpuQrEQz_sb0lBrLRJIE');
 xhr.send();
