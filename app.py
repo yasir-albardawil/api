@@ -37,11 +37,6 @@ def token_required(f):
     return decorated
 
 
-@app.route('/')
-def show_data():
-    return render_template('index.html')
-
-
 @app.route('/data.json')
 @token_required
 def data():
@@ -49,15 +44,15 @@ def data():
     return jsonify(data=[d.serialize for d in data])
 
 
-@app.route('/login')
-def login():
+@app.route('/')
+def view_data():
     auth = request.authorization
     # 'exp': datetime.datetime.now() + datetime.timedelta(days=100000)
     # jsonify({'token': token.decode('UTF-8')})
     if auth and auth.username == 'yasir' and auth.password == 'password':
-        token = jwt.encode({'user': auth.username},
+        token = jwt.encode({'user': auth.username, 'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=24)},
                            app.config['SECRET_KEY'])
-        return render_template('login.html', token=token.decode('UTF-8'))
+        return render_template('index.html', token=token.decode('UTF-8'))
     return make_response('Could not verify!', 401, {'WWW-Authenticate': 'Basic realm="Login Required'})
 
 
