@@ -11,6 +11,10 @@ from database_setup import Base, Data
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_hex(256)
 # Connect to Database and create database session
+
+# For localhost
+# engine = create_engine('sqlite:///data.db', connect_args={'check_same_thread': False})
+
 engine = create_engine('mysql+pymysql://b5060ef24e7038:1902c0af@eu-cdbr-west-02.cleardb.net/heroku_ad06423d03e4f02')
 Base.metadata.bind = engine
 
