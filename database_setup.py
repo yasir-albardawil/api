@@ -42,5 +42,10 @@ class Data(Base):
 # For localhost
 # engine = create_engine('sqlite:///data.db', connect_args={'check_same_thread': False})
 
+# engine = create_engine('mysql+pymysql://b5060ef24e7038:1902c0af@eu-cdbr-west-02.cleardb.net/heroku_ad06423d03e4f02')
+# engine = create_engine('postgres://ovwycgfbfuzsee:cb4a0a501c78638240b3e8d421f8db3f4e85762a6aad0411b090f53703e73a98'
+# #                        '@ec2-54-228-246-214.eu-west-1.compute.amazonaws.com:5432/d1824lvtejfmou')
+# engine = create_engine('postgres://ovwycgfbfuzsee:cb4a0a501c78638240b3e8d421f8db3f4e85762a6aad0411b090f53703e73a98'
+#                        '@ec2-54-228-246-214.eu-west-1.compute.amazonaws.com:5432/d1824lvtejfmou')
 engine = create_engine('mysql+pymysql://b5060ef24e7038:1902c0af@eu-cdbr-west-02.cleardb.net/heroku_ad06423d03e4f02')
 Base.metadata.create_all(engine)
